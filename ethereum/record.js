@@ -2,8 +2,8 @@ import web3 from './web3';
 import Record from './build/Record.json';
 
 const instance = new web3.eth.Contract(
-    JSON.parse(Record.interface),
-    '0x101B340A90F3be8eE5f755fDb1F87674C09061DF' //Deployed Contract Code //Everytime contract code is changed and compiled, need to update this
+    Record.abi, // Lấy 'abi' từ tệp JSON (không cần parse)
+    '0xE6E61ce2Ad181972B83FA85AC47a9cd8a3010B39' // Địa chỉ hợp đồng đã được triển khai
 );
 
 export default instance;

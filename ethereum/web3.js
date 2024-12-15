@@ -9,7 +9,7 @@ if(typeof window !== 'undefined' && window.web3 !== 'undefined') {
 } else {
     //We are on the server OR the user is not running metamask
     const provider = new Web3.providers.HttpProvider(
-        'https://rinkeby.infura.io/v3/cae3e4c525ba4a75b6ae9ffe89ca6160'
+        'https://holesky.infura.io/v3/9d2440ebe1174eb9afdd525dc8d6d0c8'
     );
     web3 = new Web3(provider);
 }
