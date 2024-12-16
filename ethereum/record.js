@@ -3,7 +3,7 @@ import Record from './build/Record.json';
 
 const instance = new web3.eth.Contract(
     Record.abi, // Lấy 'abi' từ tệp JSON (không cần parse)
-    '0x2c14c99879C0BD173aDdb3b93e5e6268AD384519' // Địa chỉ hợp đồng đã được triển khai
+    '0xcbC169ba928782222bd3891bdac0323120254B9a' // Địa chỉ hợp đồng đã được triển khai
 );
 
 export default instance;

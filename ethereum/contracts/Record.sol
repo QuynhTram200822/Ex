@@ -93,15 +93,48 @@ contract Record {
     }
 
     // Add patient details
-    function setDetails(Patients memory patient) public {
-        require(!isPatient[msg.sender], "Already a registered patient");
+   function setDetails(
+    string memory _ic,
+    string memory _name,
+    string memory _phone,
+    string memory _gender,
+    string memory _dob,
+    string memory _height,
+    string memory _weight,
+    string memory _houseaddr,
+    string memory _bloodgroup,
+    string memory _allergies,
+    string memory _medication,
+    string memory _emergencyName,
+    string memory _emergencyContact
+) public {
+    require(!isPatient[msg.sender], "Already a registered patient");
 
-        patients[msg.sender] = patient;
-        patientList.push(msg.sender);
-        isPatient[msg.sender] = true;
-        isApproved[msg.sender][msg.sender] = true;
-        patientCount++;
-    }
+    Patients memory patient = Patients({
+        ic: _ic,
+        name: _name,
+        phone: _phone,
+        gender: _gender,
+        dob: _dob,
+        height: _height,
+        weight: _weight,
+        houseaddr: _houseaddr,
+        bloodgroup: _bloodgroup,
+        allergies: _allergies,
+        medication: _medication,
+        emergencyName: _emergencyName,
+        emergencyContact: _emergencyContact,
+        addr: msg.sender,
+        date: block.timestamp
+    });
+
+    patients[msg.sender] = patient;
+    patientList.push(msg.sender);
+    isPatient[msg.sender] = true;
+    isApproved[msg.sender][msg.sender] = true;
+    patientCount++;
+}
+
 
     // Edit patient details
     function editDetails(PatientUpdate memory update) public {
