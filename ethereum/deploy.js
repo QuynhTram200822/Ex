@@ -19,7 +19,7 @@ const deploy = async () => {
     try {
         const result = await new web3.eth.Contract(compiledRecord.abi) // Sửa `interface` thành `abi`
             .deploy({ data: compiledRecord.evm.bytecode.object }) // Sửa `bytecode` đúng định dạng
-            .send({ gas: '3000000', from: accounts[0] }); // Điều chỉnh gas phù hợp
+            .send({ gas: '5000000', from: accounts[0] }); // Điều chỉnh gas phù hợp
 
         // Kiểm tra số dư sau triển khai
         const balance = await web3.eth.getBalance(accounts[0]);

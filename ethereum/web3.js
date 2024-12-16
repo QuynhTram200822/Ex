@@ -4,8 +4,8 @@ let web3;
 
 if(typeof window !== 'undefined' && window.web3 !== 'undefined') {
     //We are in the browser AND metamask is running
-    async () => {await window.web3.currentProvider.enable();}
-    web3 = new Web3(window.web3.currentProvider);
+    async () => {await window.ethereum.enable();}
+    web3 = new Web3(window.ethereum);
 } else {
     //We are on the server OR the user is not running metamask
     const provider = new Web3.providers.HttpProvider(
