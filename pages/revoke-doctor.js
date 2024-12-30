@@ -19,7 +19,7 @@ class RevokeDoctor extends Component {
         try {
             const accounts = await web3.eth.getAccounts();
 
-            await record.methods.RevokePermission(this.state.doctorAddr).send({ from: accounts[0] });
+            await record.methods.revokePermission(this.state.doctorAddr).send({ from: accounts[0] });
 
             alert("Permission Revoked Successfully!");
         }

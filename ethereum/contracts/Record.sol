@@ -137,24 +137,39 @@ contract Record {
 
 
     // Edit patient details
-    function editDetails(PatientUpdate memory update) public {
-        require(isPatient[msg.sender], "Not a registered patient");
+   function editDetails(
+    string memory _ic,
+    string memory _name,
+    string memory _phone,
+    string memory _gender,
+    string memory _dob,
+    string memory _height,
+    string memory _weight,
+    string memory _houseaddr,
+    string memory _bloodgroup,
+    string memory _allergies,
+    string memory _medication,
+    string memory _emergencyName,
+    string memory _emergencyContact
+) public {
+    require(isPatient[msg.sender], "Not a registered patient");
 
-        Patients storage p = patients[msg.sender];
-        p.ic = update.ic;
-        p.name = update.name;
-        p.phone = update.phone;
-        p.gender = update.gender;
-        p.dob = update.dob;
-        p.height = update.height;
-        p.weight = update.weight;
-        p.houseaddr = update.houseaddr;
-        p.bloodgroup = update.bloodgroup;
-        p.allergies = update.allergies;
-        p.medication = update.medication;
-        p.emergencyName = update.emergencyName;
-        p.emergencyContact = update.emergencyContact;
-    }
+    Patients storage p = patients[msg.sender];
+    p.ic = _ic;
+    p.name = _name;
+    p.phone = _phone;
+    p.gender = _gender;
+    p.dob = _dob;
+    p.height = _height;
+    p.weight = _weight;
+    p.houseaddr = _houseaddr;
+    p.bloodgroup = _bloodgroup;
+    p.allergies = _allergies;
+    p.medication = _medication;
+    p.emergencyName = _emergencyName;
+    p.emergencyContact = _emergencyContact;
+}
+
 
     // Add doctor details
     function setDoctor(string memory _ic, string memory _name, string memory _phone, string memory _gender, string memory _dob, string memory _qualification, string memory _major) public {

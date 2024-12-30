@@ -1,11 +1,11 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider'); // Sửa tên provider
 const Web3 = require('web3');
 const compiledRecord = require('./build/Record.json'); // Đảm bảo file JSON tồn tại
-
-// Kết nối đến mạng Sepolia qua Infura
+const fs = require('fs');
+// Kết nối đến mạng HoleSky qua Infura
 const provider = new HDWalletProvider(
     'flame mosquito step ocean tiny clever test time country head gloom evoke', // Seed phrase của ví
-    'https://holesky.infura.io/v3/9d2440ebe1174eb9afdd525dc8d6d0c8' // URL mạng Sepolia từ Infura
+    'https://holesky.infura.io/v3/9d2440ebe1174eb9afdd525dc8d6d0c8' // URL mạng HoleSky từ Infura
 );
 
 const web3 = new Web3(provider);
